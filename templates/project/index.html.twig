@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+    {% set projet_count = projects|length %}
+    {{ projet_count }}
+    {% for projet in projects %}
+        <article>
+<h2><a href="{{ path('app_projet_show', {id: projet.id}) }}">{{ projet.title }} </a></h2>                 
+<p>{{ projet.description|u.truncate(10,'...',false) }}</p> 
+<p>Submitted {{ projet.startDate|ago }}</p>      
+<p>Updated {{ projet.endDate|ago }}</p>      
+            
+        </article>
+    {% else %}
+        <p> Sorry, no projet yet </p>
+    {% endfor %}
+{% endblock %}
+

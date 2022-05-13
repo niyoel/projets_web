@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ projet.title }}{% endblock %}
+{% block body %}
+    <article>
+         <h1>{{ projet.title }}</h1>
+        <p>{{ projet.description }}</p>
+        <p>Submitted {{ projet.startDate|date }}</p>
+    </article>
+        <a href="#">Edit</a>
+        <a href="{{ path('app_home') }}">Go Back</a>
+{% endblock %}
