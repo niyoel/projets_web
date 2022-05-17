@@ -5,6 +5,9 @@
 {% block body %}
     {% set projet_count = projects|length %}
     {{ projet_count }}
+<li><a href="{{ path('app_home') }}">Home</a></li>
+<p>
+<li><a href="{{ path('app_projet_create') }}">Create Projet</a></li>
     {% for projet in projects %}
         <article>
 <h2><a href="{{ path('app_projet_show', {id: projet.id}) }}">{{ projet.title }} </a></h2>                 
